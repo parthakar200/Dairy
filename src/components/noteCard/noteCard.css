@@ -1,0 +1,6 @@
+.paper{
+    background-image: url('../../../public/images/note-paper.png');
+    background-size: cover;
+
+    background-position: center;
+}
