@@ -13,7 +13,7 @@ function App() {
   
 
   return (
-    <div className='d-flex '>
+    <div className='px-4'>
       <InputForm/>
       
     </div>

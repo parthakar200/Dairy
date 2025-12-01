@@ -11,7 +11,10 @@ export function InputForm(){
     const noteSubmit = (e)=>{
         e.preventDefault();
 
-        setPrint([...print,{inp,text}]);       
+        if(!(inp==''&&text=='')){
+            setPrint([...print,{inp,text}]); 
+        }
+              
 
         setInp('');
         setText('');
@@ -27,20 +30,21 @@ export function InputForm(){
     }
 
     return (
-        <div className=" d-flex gap-4 w-100" style={{height:"60vh"}}>
-            <form action="" onSubmit={noteSubmit} className="d-flex flex-column justify-content-evenly h-75 gap-2 w-100">
+        <div className=" d-flex justify-content-center gap-4 w-100  px-4 big-box " style={{height:"60vh"}}>
+            <form action="" onSubmit={noteSubmit} className="d-flex flex-column justify-content-evenly h-75 gap-2  f-div-top" style={{width:"40%"}}>
                 <input type="text" placeholder="Enter Heading" className="h-25 rounded p-2 bg-dark" value={inp} onChange={inpWrite}/>
                 <textarea name="" id="" placeholder="Enter About" className="h-75 rounded p-2 bg-dark" value={text} onChange={textWrite}></textarea>
                 <button className="rounded bg-light text-dark">Add Note</button>
             </form>
-             <div className="w-100 d-flex justify-content-center gap-3 flex-wrap" style={{height:"60vh"}}>
-                
+             <div className="d-flex px-3 gap-3 overflow-auto f-div-dn mw-50" >
+            
             {
                 print.map((ele,idx)=>{
                     console.log(ele);
                     return <Card key={idx} heading={ele.inp} content={ele.text}/>
                 })
             }
+             
             </div>
         </div>
     )
