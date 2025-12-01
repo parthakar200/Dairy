@@ -6,7 +6,7 @@ export function Card(props) {
 
       <div className="rounded  paper pt-4 px-4 text-dark" style={{height:"280px", width:"200px"}}>
 
-      <div className="rounded paper pt-4 px-4 text-dark" style={{height:"65%", width:"45%"}}>
+      {/* <div className="rounded paper pt-4 px-4 text-dark" style={{height:"65%", width:"45%"}}> */}
 
         <h4 className='pt-2 m-0'>{props.heading}</h4>
         <hr />
